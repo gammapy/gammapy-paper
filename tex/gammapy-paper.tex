@@ -1,0 +1,37 @@
+%                                                                 aa.dem
+% AA vers. 9.0, LaTeX class for Astronomy & Astrophysics
+% demonstration file
+%                                                       (c) EDP Sciences
+%-----------------------------------------------------------------------
+%
+%\documentclass[referee]{aa} % for a referee version
+%\documentclass[onecolumn]{aa} % for a paper on 1 column  
+%\documentclass[longauth]{aa} % for the long lists of affiliations 
+%\documentclass[rnote]{aa} % for the research notes
+%\documentclass[letter]{aa} % for the letters 
+%\documentclass[bibyear]{aa} % if the references are not structured 
+%                              according to the author-year natbib style
+
+% \documentclass[]{aa}  
+\documentclass[traditabstract]{aa}  
+
+\usepackage{graphicx}
+\usepackage{txfonts}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document} 
+
+\input{text/shortcuts}
+\input{text/header}
+\input{text/intro}
+\input{text/apps}
+\input{text/development}
+\input{text/plans}
+\input{text/conclusions}
+\input{text/acknowledgements}
+
+\bibliographystyle{aa}
+\bibliography{gammapy-paper.bib}
+
+\end{document}

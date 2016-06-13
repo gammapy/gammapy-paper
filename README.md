@@ -45,3 +45,9 @@ Here's some examples of similar papers that we can look at:
   * http://dx.doi.org/10.7717/peerj.453
 * Gammalib / ctools paper
   * http://adsabs.harvard.edu/abs/2016arXiv160600393K
+
+## Technical info
+
+Here's some info how to compile the paper PDF:
+
+* http://www.aanda.org/author-information
