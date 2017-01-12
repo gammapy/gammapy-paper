@@ -1,13 +1,13 @@
-# Gammapy 1.0 paper
+# Gammapy paper
 
-* Repo: https://github.com/gammasky/gammapy-paper/
-  (private for now, plan to make open later.)
-* Contact: Christoph Deil <Christoph.Deil@mpi-hd.mpg.de>
+* Repo: https://github.com/gammapy/gammapy-paper/ (public)
+* Lead: Christoph Deil <Christoph.Deil@mpi-hd.mpg.de>
 
-## Scope
+## Basic info
 
-* To be published in summer or fall 2016
-* Describe Gammapy 1.0 release
+* To be published in 2017
+* Try to keep the paper short and simple (5 or 6 pages?)
+* Do add a few code and application examples, but not much about methods or details.
 * Journal: A&A (code section, open access and free publication)
 
 ## Rules for authorship
