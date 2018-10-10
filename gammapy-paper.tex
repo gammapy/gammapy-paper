@@ -18,17 +18,19 @@
 \usepackage{graphicx}
 \usepackage{txfonts}
 \usepackage{url}
-\usepackage{hyperref}
+% The [draft] was added to avoid a LaTeX issue
+% See https://tex.stackexchange.com/a/154184
+\usepackage[draft]{hyperref}
 
 \begin{document} 
 
-\input{text/shortcuts}
+\input{text/0-shortcuts}
 
 % Front matter
 \title{Gammapy: A Python package for gamma-ray astronomy}
 \titlerunning{Gammapy}
-\input{text/authors}
-
+\input{text/0-authors}
+\input{text/0-abstract}
 % \date{Received September 15, 1996; accepted March 16, 1997}
 \keywords{
 Gamma rays: general - 
@@ -39,12 +41,15 @@ Methods: data analysis
 \maketitle
 
 % Main part
-\input{text/intro}
-\input{text/apps}
-\input{text/development}
-\input{text/plans}
-\input{text/conclusions}
-\input{text/acknowledgements}
+\input{text/1-introduction}
+\input{text/2-package}
+\input{text/3-applications}
+\input{text/3.1-cta}
+\input{text/3.2-hess}
+\input{text/3.3-fermi}
+\input{text/4-project}
+\input{text/5-summary-outlook}
+\input{text/6-acknowledgements}
 
 % Back matter
 \bibliographystyle{aa}
