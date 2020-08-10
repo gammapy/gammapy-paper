@@ -181,3 +181,5 @@ TSWLatexianTemp*
 *~[0-9]*
 
 tex/gammapy-paper.pdf
+
+.idea/
