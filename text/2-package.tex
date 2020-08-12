@@ -1,13 +1,47 @@
 \section{Gammapy package}
 \label{sec:package}
 
-The \gammapy package is structured into multiple sub-packages.
+The \gammapy package is structured into multiple sub-packages
+which roughly follow the stages in the data reduction workflow.
+
 
 \subsection{gammapy.data}
-DL3 level data
+The \verb|gammapy.data| sub-package provides access to
+DL3 level data and observation handling.
+
+
+\begin{listing}
+\begin{minted}{python}
+
+from gammapy.data import DataStore
+
+data_store = DataStore.from_dir("$GAMMAPY_DATA")
+obs_ids = [1, 2, 3]
+observations = data_store.get_observations(obs_ids)
+
+\end{minted}
+\caption{Using gammapy.data to access DL3 level data with a DataStore}
+\label{codeexample:data}
+\end{listing}
+
+
 
 \subsection{gammapy.makers}
-Data reductionn
+Data reduction
+
+\begin{listing}
+\begin{minted}[numbers=right]{python}
+
+from gammapy.makers import MapDatasetMaker
+
+maker = MapDatasetMaker()
+dataset = maker.run(dataset, observation)
+
+\end{minted}
+\caption{Using gammapy.data to access DL3 level data}
+\label{codeexample:maker}
+\end{listing}
+
 
 \subsection{gammapy.datasets}
 DL4 level data
@@ -15,11 +49,37 @@ DL4 level data
 \subsection{gammapy.modelling}
 Models and fitting
 
+\begin{listing}
+\begin{minted}[numbers=right]{python}
+
+from gammapy.modeling.models import (
+	SkyModel,
+	PowerLawSpectralModel,
+	PointSpatialModel
+)
+
+pwl = PowerLawSpectralModel()
+point = PointSpatialModel()
+
+model = SkyModel(
+	spectral_model=pwl,
+	spatial_model=point
+	name="my-model"
+)
+print(model)
+\end{minted}
+\caption{Using gammapy.data to access DL3 level data}
+\label{codeexample:maker}
+\end{listing}
+
+
+
 \subsection{gammapy.estimators}
 Estimators
 
 \subsection{gammapy.visualisation}
 Plotters etc.
+
 \subsection{gammapy.analysis}
 High level analysis API
 
@@ -28,10 +88,18 @@ Dark matter models, source population modelling
 
 
 \subsection{gammapy.catalog}
-\subsection{gammapy.maps}
-\subsection{gammapy.irf}
-\subsection{gammapy.utils}
+Gamma-ray catalog access
 
+
+\subsection{gammapy.maps}
+Map data structures WCS and HPX
+
+\subsection{gammapy.irf}
+IRF classes
+
+
+\subsection{gammapy.utils}
+Utility functions...
 
 
 Outline:

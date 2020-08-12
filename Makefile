@@ -7,10 +7,10 @@ all: $(TARGET).pdf
 $(TARGET).pdf: *.tex figures/* text/*  $(TARGET).bib
 
 %.pdf: %.tex
-	$(LATEX) $<
+	$(LATEX) -shell-escape $<
 	$(BIBTEX) $*
-	$(LATEX) $<
-	$(LATEX) $<
+	$(LATEX) -shell-escape $<
+	$(LATEX) -shell-escape $<
 
 make clean:
 	- rm -f $(TARGET).pdf $(TARGET).aux $(TARGET).log $(TARGET).bbl $(TARGET).fff

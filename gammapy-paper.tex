@@ -21,6 +21,20 @@
 % The [draft] was added to avoid a LaTeX issue
 % See https://tex.stackexchange.com/a/154184
 \usepackage[draft]{hyperref}
+\usepackage{xcolor}
+
+\usepackage{minted}
+\usemintedstyle{colorful}
+\definecolor{bg}{rgb}{0.98,0.98,0.98}
+\setminted{
+	frame=lines,
+	framesep=2mm,
+	baselinestretch=1.2,
+	bgcolor=bg,
+	fontsize=\footnotesize,
+	linenos
+}
+
 
 \begin{document} 
 
