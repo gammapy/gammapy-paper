@@ -1,8 +1,11 @@
 \section{Introduction}
 \label{sec:intro}
+Gamma-ray astronomy is a rather young field of research.
+By detecting and reconstructing arrival direction, time and energy
+of primary cosmic gamma-rays
+The gamma-ray sky is either observed by ground based instruments
 
-Gamma-ray astronomy is a rather young field of research,
-driven by experiments with proprietary software often based
+, driven by experiments with proprietary software often based
 on ROOT, because of the particle physics background. Such 
 as HESS, Veritas or Magic.
 
@@ -10,10 +13,26 @@ The Cherenkov Telescope Array will be operated as an open
 observatory for the first time. Thus there is a need for
 open analysis software as well.
 
-In recent years Python has established as one of the standard
-programming languages for data science as well as astronomy.
-After a phase of many packages the ecosystem was unified 
-with \astropy \citep{astropy}.
+Once the primary photons are reconstructed the format of the data
+of all Gamma-ray instrumets can be brought into a common format.
+An effort is the gamma-astro data formats \cite{gadf-zenodo}.
+The data format is based on FITS  \citep{fits}.
+
+
+In recent years Python \footnote{\PythonUrl} has established as one of the
+standard programming  languages for astronomy \footnote{Citation missing}
+as well as data sciences in  general \footnote{Citation missing}.
+The success is mostly attributed to the simple and easy to learn syntax,
+the ability to act as a "glue" language between different libraries,
+the rich eco-system of packages and the open and active (online) community.
+
+Astronomical data analysis software written in Python existed since 2000.
+e.g. sherpa \citep{sherpa-2011, sherpa-2009}, or for gamma-ray even
+PyFACT \citep{pyfact}.
+
+The short-term success of Pythion lead to a prolifaration of packages, until
+\astropy \citep{astropy} was created in 2012. Astropy is and
+
 
 Gammapy is a Python package for gamma-ray astronomy.
 
@@ -31,12 +50,7 @@ Here's a list of references I'd like to cite ... to be incorporated into the
 main text somewhere:
 
 \begin{itemize}
-\item The Python programming language\footnote{\PythonUrl}
 \item Gammapy webpage\footnote{\GammapyUrl}
-\item PyFACT \citep{pyfact}
-\item FITS \citep{fits}
-\item Gamma-astro data formats \cite{gadf-zenodo}
-\item Sherpa \citep{sherpa-2011, sherpa-2009}
 \item Naima\footnote{\NaimaUrl} \citep{Naima}
 \item Gammapy use in science publications: \citep{Owen2015}, SNR shell, HGPS
 \end{itemize}
