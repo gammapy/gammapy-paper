@@ -183,3 +183,4 @@ TSWLatexianTemp*
 gammapy-paper.pdf
 
 .idea/
+.DS_Store
