@@ -25,9 +25,9 @@
 %%   Grave accent  \`     Left brace    \{     Vertical bar  \|
 %%   Right brace   \}     Tilde         \~}
 %%
-\def\filedate{2016/01/01}
+\def\filedate{2016/09/01}
 \let\aafiledate\filedate
-\def\fileversion{9.0}
+\def\fileversion{9.1}
 \let\aafileversion\fileversion
 \NeedsTeXFormat{LaTeX2e}[1995/06/01]
 \ProvidesClass{aa}
@@ -41,8 +41,6 @@
 \DeclareOption{online}{\aa@onlinetrue}
 \newif\ifaa@referee
 \DeclareOption{referee}{\aa@refereetrue}
-\newif\ifaa@rnote
-\DeclareOption{rnote}{\aa@rnotetrue}
 \newif\ifaa@contents
 \DeclareOption{contents}{\aa@contentstrue}
 \newif\ifaa@contentsAut
@@ -331,8 +329,6 @@
 \setlength{\aa@aftersubtitleskip}{10\p@}
 \newlength{\aa@afterauthorskip}
 \setlength{\aa@afterauthorskip}{16.5\p@}
-\newlength{\aa@beforernoteskip}
-\setlength{\aa@beforernoteskip}{2pt}
 \newlength{\aa@beforedefaultheadnoteskip}
 \setlength{\aa@beforedefaultheadnoteskip}{2pt}
 \newlength{\aa@headingleftmargin}
@@ -379,7 +375,6 @@
 \setlength{\betweenumberspace}{3.33pt}
 \newif\ifaa@structabstract
 \newif\ifaa@numberedtheorem
-\newif\ifaa@rnoteedp
 \newif\ifaa@firstonline
 \aa@firstonlinetrue
 \newcommand*\journalname[1]{\renewcommand*\aa@journalname{#1}}
@@ -396,7 +391,6 @@
 \gdef\@AANum{#1}}
 \newcommand*\@AANum{}
 \newcommand*\aa@numarticle{Article number}
-\newcommand*\rnoteedp{\aa@rnoteedptrue}
 \newcommand*\doi[1]{%
   \renewcommand*\aa@doi{DOI: #1}%
   \renewcommand*\aa@doifig{#1}%
@@ -432,9 +426,7 @@
 \addto\captionsenglish{\renewcommand*\figurename{Fig.}}
 \newcommand*\aa@figtype{figure}
 \newcommand*\aa@tabtype{table}
-\newcommand*\rnotename{(Research Note)}
 \newcommand*\lettername{Letter to the Editor}
-\newcommand*\rnotname{(RN)}
 \newcommand*\noteaddname{Note added in proof.}
 \def\noteadd{\par\addvspace{17pt}\rm
 \trivlist\item[\hskip\labelsep
@@ -515,8 +507,6 @@
 \newcommand*\aa@defaultheadnotefont{\LARGE\sffamily\bfseries\itshape}
 \newcommand*\aa@titlefont{\LARGE \sffamily\bfseries\boldmath}
 \newcommand*\aa@subtitlefont{\Large \sffamily\bfseries\boldmath}
-\newcommand*\aa@rnotefont{\LARGE \sffamily\bfseries\itshape}
-\newcommand*\aa@rnotfont{\itshape}
 \newcommand*\aa@authorfont{\large}
 \newcommand*\aa@institutefont{\small}
 \newcommand*\aa@datefont{\small}
@@ -1011,9 +1001,6 @@
     \fi
     {\aa@titlefont \aa@title\par}
     \ifx\aa@subtitle\empty%
-      \ifaa@rnote
-        {\aa@rnotefont \rnotename\par}
-      \fi
       \ifx\aa@headnote\aa@defaultheadnote
         {\aa@defaultheadnotefont (\aa@headnote)\par}
       \fi
@@ -1021,10 +1008,6 @@
     \else
     \addvspace{\aa@aftertitleskip}
       {\aa@subtitlefont \aa@subtitle\par}
-      \ifaa@rnote
-        \addvspace{\aa@beforernoteskip}
-        {\aa@rnotefont \rnotename\par}
-      \fi
       \ifx\aa@headnote\aa@defaultheadnote
         \addvspace{\aa@beforedefaultheadnoteskip}
         {\aa@defaultheadnotefont (\aa@headnote)\par}
@@ -1125,12 +1108,6 @@
     \protected@xdef\aa@headings{\aa@headings\unskip: \aa@title}%
   \else
     \protected@xdef\aa@headings{\aa@headings\unskip: \aa@titlerunning}%
-  \fi
-  \ifaa@rnote
-    \protected@xdef\aa@headings{%
-      \aa@headings\space
-      \aa@rnotfont \rnotname
-    }%
   \fi
   \setbox0=\hbox{%
     \hspace*{\aa@securityheadmargin}%
