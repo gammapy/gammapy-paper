@@ -71,6 +71,7 @@ def make_pie():
 
     df = file_data[:-1]
     df = df.set_index("Language")
+    df = df.sort_values(by=["code"])[::-1]
     df.plot.pie(y="code", figsize=(7, 7), autopct=fix_autopct, labels=None)
     plt.ylabel("")
     plt.savefig("piecode.png")
@@ -78,6 +79,7 @@ def make_pie():
 
     df = file_data[:-1]
     df = df.set_index("Language")
+    df = df.sort_values(by=["files"])[::-1]
     df.plot.pie(y="files", figsize=(7, 7), autopct=fix_autopct, labels=None)
     plt.ylabel("")
     plt.savefig("piefiles.png")
